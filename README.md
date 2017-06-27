@@ -82,4 +82,5 @@ configuration Example
 }
 ```
 (C) Copyright 2017 Conscia Norway AS
+
 Author Darren R. Starr
