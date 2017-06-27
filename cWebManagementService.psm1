@@ -349,9 +349,7 @@ class cWebManagementService
     #>
     hidden static [void] SetWMSvcThumbprint([byte[]]$Thumbprint)
     {
-        $previousValue = Get-ItemPropertyValue `
-            -Path ([cWebManagementService]::WMSvcRegistryRoot) `
-            -Name ([cWebManagementService]::WMSvcRegistryCertificateKey)
+        $previousValue = Get-ItemPropertyValue -Path ([cWebManagementService]::WMSvcRegistryRoot) -Name ([cWebManagementService]::WMSvcRegistryCertificateKey)
 
         if ($null -eq $previousValue) {
             # In case this function is being called when there isn't already a registry key,
@@ -360,19 +358,10 @@ class cWebManagementService
             # this function likely should not have been called.
             return
         } elseif ($previousValue.GetType() -eq $Thumbprint) {
-            Set-ItemProperty `
-                -Path ([cWebManagementService]::WMSvcRegistryRoot) `
-                -Name ([cWebManagementService]::WMSvcRegistryCertificateKey) `
-                -Value $Thumbprint `
+            Set-ItemProperty -Path ([cWebManagementService]::WMSvcRegistryRoot) -Name ([cWebManagementService]::WMSvcRegistryCertificateKey) -Value $Thumbprint
         } else {
-            Remove-ItemProperty `
-                -Path ([cWebManagementService]::WMSvcRegistryRoot) `
-                -Name ([cWebManagementService]::WMSvcRegistryCertificateKey)
-
-            New-ItemProperty `
-                -Path ([cWebManagementService]::WMSvcRegistryRoot) `
-                -Name ([cWebManagementService]::WMSvcRegistryCertificateKey) `
-                -Value $Thumbprint
+            Remove-ItemProperty -Path ([cWebManagementService]::WMSvcRegistryRoot) -Name ([cWebManagementService]::WMSvcRegistryCertificateKey)
+            New-ItemProperty -Path ([cWebManagementService]::WMSvcRegistryRoot) -Name ([cWebManagementService]::WMSvcRegistryCertificateKey) -Value $Thumbprint
         }
     }
 
