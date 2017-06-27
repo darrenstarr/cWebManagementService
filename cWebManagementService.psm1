@@ -9,10 +9,10 @@
 class cWebManagementService
 {
     [DscProperty(Key)]
-    [int]$EnableRemoteManagement = $null
+    [int]$EnableRemoteManagement
 
     [DscProperty()]
-    [string]$CertificateSubjectName = $null
+    [string]$CertificateSubjectName
 
     hidden static [string]$WMSvcRegistryRoot = 'HKLM:\SOFTWARE\Microsoft\WebManagement\Server'
     hidden static [string]$WMSvcRegistryCertificateKey = 'SslCertificateHash'
