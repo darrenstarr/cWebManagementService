@@ -35,19 +35,19 @@
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            # Tags = @()
+            Tags = @('webmanagementservice','dsc')
 
             # A URL to the license for this module.
-            # LicenseUri = ''
+            LicenseUri = 'https://github.com/darrenstarr/cWebManagementService/blob/master/LICENSE'
+
 
             # A URL to the main website for this project.
-            # ProjectUri = ''
-
-            # A URL to an icon representing this module.
-            # IconUri = ''
+            ProjectUri = 'https://github.com/darrenstarr/cWebManagementService'
 
             # ReleaseNotes of this module
-            # ReleaseNotes = ''
+            ReleaseNotes = 'Initial release'
+
+            ExternalModuleDependencies = @('WebAdministration')
 
         } # End of PSData hashtable
 

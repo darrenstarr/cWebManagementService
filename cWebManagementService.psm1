@@ -1,5 +1,3 @@
-Import-Module WebAdministration
-
 <#
     .SUMMARY
         DSC Resource to configure the IIS Web Management Service
