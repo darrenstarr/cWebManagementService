@@ -3,7 +3,7 @@
     RootModule = '.\cWebManagementService.psm1'
 
     # Version number of this module.
-    ModuleVersion = '1.0.0'
+    ModuleVersion = '1.0.1'
 
     # ID used to uniquely identify this module
     GUID = 'fc4ac4ad-5bbe-422b-bcea-2ca77b14fccf'
